@@ -1,0 +1,60 @@
+name: Build and Publish
+
+# graphify packaged as an in-cluster MCP service (rhodium-org/cluster).
+# Builds the upstream Dockerfile (single-stage python:3.12-slim, ENTRYPOINT
+# `python -m graphify.serve`) and publishes to ghcr.io/rhodium-org/graphify
+# via the org's gate-before-push action (Trivy scans, then pushes only if the
+# scan passes). The repo lives in rhodium-org, so the in-repo GITHUB_TOKEN has
+# packages:write to this image — no cross-org PAT needed.
+
+on:
+  push:
+    branches: [v8]
+    paths:
+      - 'graphify/**'
+      - 'pyproject.toml'
+      - 'Dockerfile'
+      - '.dockerignore'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+env:
+  GHCR_REGISTRY: ghcr.io
+  ORG_NAME: rhodium-org
+  IMAGE_NAME: graphify
+
+jobs:
+  build:
+    runs-on: [self-hosted, org, linux, docker]
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Generate timestamp tag (unix seconds — matches ImagePolicy)
+        id: timestamp
+        run: echo "ts=$(date +%s)" >> $GITHUB_OUTPUT
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.GHCR_REGISTRY }}/${{ env.ORG_NAME }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=sha,prefix=v8-
+            type=raw,value=ts-${{ steps.timestamp.outputs.ts }},enable={{is_default_branch}}
+
+      - name: Build, scan and push (gate-before-push)
+        uses: rhodium-org/shared-actions/actions/trivy-gated-build@v1
+        with:
+          image-name: ${{ env.GHCR_REGISTRY }}/${{ env.ORG_NAME }}/${{ env.IMAGE_NAME }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          push: true
+          registry-password: ${{ secrets.GITHUB_TOKEN }}
