@@ -13,7 +13,9 @@ WORKDIR /app
 COPY . /app
 
 # The [mcp] extra pulls mcp + starlette + uvicorn, which the HTTP transport needs.
-RUN pip install --no-cache-dir ".[mcp]"
+# The [openai] extra adds the openai client + tiktoken so `graphify label
+# --backend=openai` can drive the semantic pass against litellm-oss (WP6).
+RUN pip install --no-cache-dir ".[mcp,openai]"
 
 # Run as a non-root user — the server is network-exposed.
 RUN useradd --create-home --uid 10001 graphify
