@@ -1,0 +1,12 @@
+uid: TEST-0003
+type: test
+status: proposed
+title: test_what_upstream_deletes_is_kept
+text: 'mirror/test_mirror.py: a branch and tag deleted upstream stay and are reported
+  gone.'
+normative: false
+links:
+- target: REQ-0003
+  type: verifies
+attrs:
+  origin: ai

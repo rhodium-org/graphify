@@ -1,0 +1,12 @@
+uid: REQ-0007
+type: requirement
+status: proposed
+title: The mirror's own branches are never written from upstream
+text: Upstream never writes the branches mirror, rhodium/* or kept/*.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

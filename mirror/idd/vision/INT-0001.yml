@@ -1,0 +1,10 @@
+uid: INT-0001
+type: intent
+status: proposed
+title: Hold a complete copy of graphify however upstream changes
+text: rhodium-org/graphify holds every branch and tag Graphify-Labs/graphify has
+  published, so the estate can build and run graphify if upstream deletes, rewrites,
+  relicenses or withdraws it.
+normative: false
+attrs:
+  origin: ai

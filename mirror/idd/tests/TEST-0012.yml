@@ -1,0 +1,12 @@
+uid: TEST-0012
+type: test
+status: proposed
+title: Workflows disabled after the first real run
+text: After the first run in rhodium-org/graphify, gh workflow list --all shows every
+  workflow but mirror.yml disabled.
+normative: false
+links:
+- target: REQ-0009
+  type: verifies
+attrs:
+  origin: ai

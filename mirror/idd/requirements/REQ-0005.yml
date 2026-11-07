@@ -1,0 +1,13 @@
+uid: REQ-0005
+type: requirement
+status: proposed
+title: A tag is never moved
+text: When upstream points an existing tag elsewhere, the mirror's tag stays and
+  upstream's is kept as kept/upstream/<tag>-<sha7>.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

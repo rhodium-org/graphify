@@ -1,0 +1,13 @@
+uid: REQ-0006
+type: requirement
+status: proposed
+title: An unreadable upstream changes nothing and fails loudly
+text: When upstream cannot be listed or fetched, or lists no branches, the run pushes
+  nothing, fails, and opens one issue in the mirror.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

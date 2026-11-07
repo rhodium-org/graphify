@@ -1,0 +1,13 @@
+uid: REQ-0002
+type: requirement
+status: proposed
+title: A branch that moves forward is followed
+text: When upstream moves a branch to a commit whose history holds the mirror's tip,
+  the mirror's branch moves to it.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

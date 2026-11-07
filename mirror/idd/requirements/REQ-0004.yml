@@ -1,0 +1,14 @@
+uid: REQ-0004
+type: requirement
+status: proposed
+title: A rewritten branch keeps its old tip
+text: When upstream moves a branch to a commit whose history lacks the mirror's tip,
+  the mirror first keeps that tip as kept/<branch>/<date>-<sha7>, then follows upstream,
+  in one atomic push.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

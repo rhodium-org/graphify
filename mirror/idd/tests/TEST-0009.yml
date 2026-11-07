@@ -1,0 +1,11 @@
+uid: TEST-0009
+type: test
+status: proposed
+title: test_our_own_branch_names_are_never_written_from_upstream
+text: 'mirror/test_mirror.py: upstream branches named mirror and rhodium/* are skipped.'
+normative: false
+links:
+- target: REQ-0007
+  type: verifies
+attrs:
+  origin: ai

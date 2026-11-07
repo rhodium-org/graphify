@@ -1,0 +1,11 @@
+uid: TEST-0004
+type: test
+status: proposed
+title: test_a_rewritten_branch_follows_upstream_and_keeps_its_old_tip
+text: 'mirror/test_mirror.py: a force-push upstream is followed and the old tip kept.'
+normative: false
+links:
+- target: REQ-0004
+  type: verifies
+attrs:
+  origin: ai

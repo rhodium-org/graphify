@@ -1,0 +1,12 @@
+uid: REQ-0008
+type: requirement
+status: proposed
+title: A run with nothing new pushes nothing
+text: Running again with no change upstream pushes nothing.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: should
+  origin: ai

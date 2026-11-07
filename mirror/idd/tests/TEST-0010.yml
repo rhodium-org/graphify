@@ -1,0 +1,11 @@
+uid: TEST-0010
+type: test
+status: proposed
+title: test_a_second_run_pushes_nothing
+text: 'mirror/test_mirror.py: a second run plans no push.'
+normative: false
+links:
+- target: REQ-0008
+  type: verifies
+attrs:
+  origin: ai

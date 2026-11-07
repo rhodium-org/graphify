@@ -1,0 +1,12 @@
+uid: TEST-0006
+type: test
+status: proposed
+title: test_a_tag_is_never_moved
+text: 'mirror/test_mirror.py: a moved tag upstream leaves ours and keeps theirs,
+  once.'
+normative: false
+links:
+- target: REQ-0005
+  type: verifies
+attrs:
+  origin: ai

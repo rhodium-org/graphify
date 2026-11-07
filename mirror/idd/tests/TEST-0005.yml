@@ -1,0 +1,12 @@
+uid: TEST-0005
+type: test
+status: proposed
+title: test_our_own_commits_on_a_mirrored_branch_are_kept
+text: 'mirror/test_mirror.py: commits of our own on a mirrored branch are kept when
+  upstream moves on.'
+normative: false
+links:
+- target: REQ-0004
+  type: verifies
+attrs:
+  origin: ai

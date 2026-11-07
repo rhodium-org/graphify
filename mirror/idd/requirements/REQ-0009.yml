@@ -1,0 +1,13 @@
+uid: REQ-0009
+type: requirement
+status: proposed
+title: Upstream's workflows do not run in the mirror
+text: After each run every workflow in the mirror but mirror.yml is disabled, so
+  upstream's CI, publishing and welcome bots never act here.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: should
+  origin: ai

@@ -1,0 +1,11 @@
+uid: TEST-0001
+type: test
+status: proposed
+title: test_new_branches_and_tags_are_created
+text: 'mirror/test_mirror.py: an empty target ends with upstream''s heads and tags.'
+normative: false
+links:
+- target: REQ-0001
+  type: verifies
+attrs:
+  origin: ai

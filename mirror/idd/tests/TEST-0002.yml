@@ -1,0 +1,11 @@
+uid: TEST-0002
+type: test
+status: proposed
+title: test_a_branch_that_moves_forward_is_followed
+text: 'mirror/test_mirror.py: a fast-forward upstream is followed and reported.'
+normative: false
+links:
+- target: REQ-0002
+  type: verifies
+attrs:
+  origin: ai

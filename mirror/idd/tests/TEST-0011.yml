@@ -1,0 +1,11 @@
+uid: TEST-0011
+type: test
+status: proposed
+title: test_a_dry_run_pushes_nothing
+text: 'mirror/test_mirror.py: a dry run plans but leaves the target empty.'
+normative: false
+links:
+- target: REQ-0008
+  type: verifies
+attrs:
+  origin: ai

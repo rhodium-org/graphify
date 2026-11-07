@@ -1,0 +1,12 @@
+uid: TEST-0008
+type: test
+status: proposed
+title: test_an_upstream_with_no_branches_changes_nothing
+text: 'mirror/test_mirror.py: an empty upstream raises and leaves the target as it
+  was.'
+normative: false
+links:
+- target: REQ-0006
+  type: verifies
+attrs:
+  origin: ai

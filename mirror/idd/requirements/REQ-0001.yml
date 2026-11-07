@@ -1,0 +1,12 @@
+uid: REQ-0001
+type: requirement
+status: proposed
+title: New branches and tags are created
+text: A branch or tag upstream has and the mirror has not is created in the mirror.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

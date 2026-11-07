@@ -1,0 +1,13 @@
+uid: REQ-0003
+type: requirement
+status: proposed
+title: Nothing upstream deletes is deleted
+text: A branch or tag upstream no longer lists stays in the mirror and is named in
+  the run's report.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai
