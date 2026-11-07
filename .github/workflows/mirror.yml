@@ -46,11 +46,14 @@ jobs:
             --work "$RUNNER_TEMP/work" $DRY_RUN
 
       # REQ-0009: upstream's CI, publishing and welcome bots never act here.
+      # GitHub lists a workflow that is not on the default branch only once a
+      # push has run it, a moment after the push, so wait before looking.
       - name: Keep upstream's workflows from running here
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          sleep 30
           gh workflow list --all --json id,path,state -R "$GITHUB_REPOSITORY" \
             | jq -r '.[] | select(.path != ".github/workflows/mirror.yml" and .state == "active") | .id' \
             | while read -r id; do gh workflow disable "$id" -R "$GITHUB_REPOSITORY"; done
